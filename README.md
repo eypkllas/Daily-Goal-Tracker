@@ -23,7 +23,7 @@ Daily Goal Tracker is an interactive and USER-FRIENDLY web application designed 
 To set up the Daily Goal Tracker on your local machine:
 1. Clone the repository to your local machine.
 2. Navigate to the project directory.
-3. Open `index.html` in your browser to start using the application.
+3. Open `cop.html` in your browser to start using the application.
 
 ## Technologies Used
 - HTML
@@ -33,6 +33,5 @@ To set up the Daily Goal Tracker on your local machine:
 ## Contributing
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](#).
 
-## License
-This project is [MIT](LICENSE) licensed.
+
 
