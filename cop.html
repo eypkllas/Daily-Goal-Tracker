@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Goals Chart with History</title>
+    <link rel="stylesheet" href="cop.css">
+</head>
+<body>
+    <div class="container">
+        <div id="currentDate" class="date-header"></div>
+        <input type="text" id="newGoalInput" placeholder="Enter new goal"   maxlength = "23">
+        <button id="addGoalButton">Add Goal</button>
+
+        <div id="goals">
+           
+ 
+            
+        </div>
+        <button id="updateButton">Update</button>
+        <div class="chart-navigation">
+            <button id="prevDay">&lt; Prev Day</button>
+            <button id="nextDay">Next Day &gt;</button>
+        </div>
+        <div id="chart" class="chart-container"></div>
+        <div class="monthly-chart-navigation">
+            <button id="prevMonth">&lt; Prev Month</button>
+            <button id="nextMonth">Next Month &gt;</button>
+        </div>
+        <div id="selectedDayGoals" class="selected-day-goals">
+            <h3>Goals for Selected Day</h3>
+            <ul id="goalsList"></ul>
+        </div>
+    </div>
+    <script src="cop.js"></script>
+</body>
+</html>

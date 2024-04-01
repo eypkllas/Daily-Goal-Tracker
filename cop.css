@@ -1,0 +1,72 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.date-header {
+    margin-bottom: 10px;
+    font-size: 30px;       /* size of the date header */
+    font-weight: bold; 
+}
+
+#goals label {
+    display: block;
+    margin: 5px 0;
+}
+
+
+
+.chart-container {
+    width: 100%;
+    border-top: 0px solid black;    /* couldnt get rid of it but made it 0px*/
+    position: relative;
+    height: 340px;           /* height of the base blaclk line of the graph form top*/
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    
+}
+
+.chart-bar {
+    width: 30px;
+    background-color: #6495ED;
+    margin: 0 5px;
+    transition: height 0.3s ease;
+}
+
+.chart-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 18px;
+    width: 100%;
+    border-bottom: 3px solid #000000;
+}
+
+.chart-bar.highlighted-day {
+    border: 3px solid #FF4500; /* Or any color you like */
+}
+
+/* Optional: Different style for today's bar, if you want to distinguish between "today" and "selected day" */
+.chart-bar.today {
+    background-color: #32CD32; /* A different color to denote today */
+}
+
+
+#goals {
+    display: flex;      /* flexes according to the size given , if row , it will go on till full i think  */
+    flex-wrap: wrap;           /* mutiple lienes  */
+    flex-direction: row;        /* default is row but still added it   */
+
+    justify-content: center; /* This centers the labels  */
+    gap: 15px; 
+}
+
+
