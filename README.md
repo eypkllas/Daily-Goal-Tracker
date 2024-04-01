@@ -30,8 +30,6 @@ To set up the Daily Goal Tracker on your local machine:
 - CSS
 - JavaScript
 
-## Contributing
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](#).
 
 
 
