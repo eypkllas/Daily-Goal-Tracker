@@ -27,7 +27,7 @@ body, html {
     width: 100%;
     border-top: 0px solid black;    /* couldnt get rid of it but made it 0px*/
     position: relative;
-    height: 340px;           /* height of the base blaclk line of the graph form top*/
+    height: 340px;           /* height of the base blaclk line of the graph form topo*/
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -44,7 +44,6 @@ body, html {
 .chart-container::before {
     content: '';
     position: absolute;
-    left: 0;
     bottom: 18px;
     width: 100%;
     border-bottom: 3px solid #000000;
