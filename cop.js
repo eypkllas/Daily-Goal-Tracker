@@ -5,6 +5,12 @@ let goalsList = [];
 
 let numgoal =0;
 
+
+
+
+
+
+
 function updateDateHeader() {
     currentDateElement.textContent = currentDate.toLocaleDateString('en-US', {
         day: 'numeric', month: 'long', year: 'numeric'
@@ -19,12 +25,13 @@ function getDateString(date) {
 }
 
 function addGoal() {
-    numgoal++;
+    
     
     const newGoalInput = document.getElementById('newGoalInput');   // in the html "newGoalInput " getelementbyid gets the text from there 
     const goalName = newGoalInput.value.trim().toUpperCase();
 
     if (goalName && !goalsList.includes(goalName)) {
+        numgoal++;
         goalsList.push(goalName);
         displayGoals();
         newGoalInput.value = '';
@@ -35,21 +42,19 @@ function addGoal() {
 }
 
 function displayGoals() {
-    const goalsContainer = document.getElementById('goals');   // in the html "goal ",,, getelementbyid gets the text from there 
-
+    const goalsContainer = document.getElementById('goals');
     goalsContainer.innerHTML = '';
     goalsList.forEach(goal => {  
         const label = document.createElement('label');
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.id = goal;
-        checkbox.checked = goalsData[getDateString(currentDate)]?.includes(goal);
-        checkbox.addEventListener('change', () => updateGoalsData(goal, checkbox.checked));
         label.appendChild(checkbox);
         label.append(` ${goal}`);
         goalsContainer.appendChild(label);
     });
 }
+
 
 
 
@@ -67,14 +72,25 @@ function updateGoalsData(goal, isChecked) {
 
 function saveGoalsData() {
     const dateString = getDateString(currentDate);
+    goalsData[dateString] = []; // yessss here we reset the goals so it does not read old checkboxex 
+    
+
     goalsList.forEach(goal => {
         const goalCheckbox = document.getElementById(goal);
-        if (goalCheckbox) {
-            updateGoalsData(goal, goalCheckbox.checked);
+        if (goalCheckbox && goalCheckbox.checked) {
+            // Update goalsData with the checked goals
+            goalsData[dateString].push(goal);
         }
     });
+
+    // Now that goalsData is updated, call updateChart to reflect these changes
     updateChart();
 }
+
+
+
+
+
 
 
 function showGoalsForDay(dateString) {
@@ -143,10 +159,24 @@ function updateChart() {
     showGoalsForDay(currentDateString);
 }
 
+
+
 function changeDay(amount) {
     currentDate.setDate(currentDate.getDate() + amount);
     updateDateHeader();
-    updateChart();
+    clearCheckboxes();
+    updateChart();   // here only suppose to change the day dont  touch the bars 
+}
+
+
+
+
+
+function clearCheckboxes() {
+    const checkboxes = document.querySelectorAll('#goals input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
 }
 
 document.getElementById('addGoalButton').addEventListener('click', addGoal);
@@ -157,12 +187,15 @@ document.getElementById('prevMonth').addEventListener('click', () => {
     currentDate.setMonth(currentDate.getMonth() - 1, 1);
     updateDateHeader();
     updateChart();
+    
 });
 document.getElementById('nextMonth').addEventListener('click', () => {
     currentDate.setMonth(currentDate.getMonth() + 1, 1);
     updateDateHeader();
     updateChart();
+    
 });
 
 updateDateHeader();
 updateChart();
+
