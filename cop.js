@@ -83,7 +83,7 @@ function saveGoalsData() {
         }
     });
 
-    // Now that goalsData is updated, call updateChart to reflect these changes
+    // goalsData is updated, call updateChart
     updateChart();
 }
 
@@ -96,7 +96,7 @@ function saveGoalsData() {
 function showGoalsForDay(dateString) {
     const goalsListElement = document.getElementById('goalsList');
     goalsListElement.innerHTML = '';
-    // Use goalsList to maintain order
+    //order?,,,,,
     goalsList.forEach(goal => {
         if (goalsData[dateString]?.includes(goal)) {
             const listItem = document.createElement('li');
