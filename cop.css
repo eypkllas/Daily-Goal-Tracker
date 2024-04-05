@@ -27,7 +27,7 @@ body, html {
     width: 100%;
     border-top: 0px solid black;    /* couldnt get rid of it but made it 0px*/
     position: relative;
-    height: 340px;           /* height of the base blaclk line of the graph form topo*/
+    height: 340px;           /* height of the base blaclk line of the graph form top*/
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -53,9 +53,9 @@ body, html {
     border: 3px solid #FF4500; /* Or any color you like */
 }
 
-/* Optional: Different style for today's bar, if you want to distinguish between "today" and "selected day" */
+
 .chart-bar.today {
-    background-color: #32CD32; /* A different color to denote today */
+    background-color: #32CD32; 
 }
 
 
