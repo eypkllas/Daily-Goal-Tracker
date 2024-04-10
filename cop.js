@@ -98,12 +98,12 @@ function saveGoalsData() {
     goalsList.forEach(goal => {
         const goalCheckbox = document.getElementById(goal);
         if (goalCheckbox && goalCheckbox.checked) {
-            // Update goalsData with the checked goals
+            
             goalsData[dateString].push(goal);
         }
     });
 
-    // Now that goalsData is updated, call updateChart to reflect these changes
+    
     updateChart();
 
     saveToLocalStorage()
