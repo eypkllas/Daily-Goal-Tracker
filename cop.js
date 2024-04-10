@@ -6,7 +6,25 @@ let goalsList = [];
 let numgoal =0;
 
 
+function loadFromLocalStorage() {
+    const storedGoalsData = localStorage.getItem('goalsData');
+    const storedGoalsList = localStorage.getItem('goalsList');
+    const storedNumGoal = localStorage.getItem('numgoal');
 
+    if (storedGoalsData) goalsData = JSON.parse(storedGoalsData);
+    if (storedGoalsList) goalsList = JSON.parse(storedGoalsList);
+    if (storedNumGoal) numgoal = JSON.parse(storedNumGoal);
+}
+
+loadFromLocalStorage();  // Call this when the application starts
+
+
+//aa
+function saveToLocalStorage() {
+    localStorage.setItem('goalsData', JSON.stringify(goalsData));
+    localStorage.setItem('goalsList', JSON.stringify(goalsList));
+    localStorage.setItem('numgoal', JSON.stringify(numgoal));
+}
 
 
 
@@ -39,6 +57,8 @@ function addGoal() {
     } else if (goalsList.includes(goalName)) {
         alert("Goal already exists!");
     }
+
+    saveToLocalStorage()
 }
 
 function displayGoals() {
@@ -83,8 +103,10 @@ function saveGoalsData() {
         }
     });
 
-    // goalsData is updated, call updateChart
+    // Now that goalsData is updated, call updateChart to reflect these changes
     updateChart();
+
+    saveToLocalStorage()
 }
 
 
@@ -96,7 +118,7 @@ function saveGoalsData() {
 function showGoalsForDay(dateString) {
     const goalsListElement = document.getElementById('goalsList');
     goalsListElement.innerHTML = '';
-    //order?,,,,,
+    // Use goalsList to maintain order
     goalsList.forEach(goal => {
         if (goalsData[dateString]?.includes(goal)) {
             const listItem = document.createElement('li');
@@ -196,6 +218,21 @@ document.getElementById('nextMonth').addEventListener('click', () => {
     
 });
 
+document.getElementById('resetLocalStorageButton').addEventListener('click', function() {
+    if (confirm('Are you sure you want to reset all your data? This action cannot be undone.')) {
+        localStorage.clear();
+        alert('Local storage has been reset.');
+        location.reload();
+        
+    }
+});
+
+
+
+
+loadFromLocalStorage();  // Call this when the application starts
 updateDateHeader();
 updateChart();
+displayGoals();
+
 
