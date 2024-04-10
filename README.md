@@ -63,8 +63,8 @@ Once in the nano editor, add the following line to set up your npm configuration
 export PATH="${HOME}/.npm-global/bin:$PATH"
 ```
 1.Press Ctrl + O to write the changes to the file.
-1.Press Enter to confirm the file name.
-1.Press Ctrl + X to exit nano.
+2.Press Enter to confirm the file name.
+3.Press Ctrl + X to exit nano.
 
  Source .zshrc to Apply Changes:
 ```sh
