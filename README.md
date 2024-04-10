@@ -21,6 +21,7 @@ Daily Goal Tracker is an interactive and USER-FRIENDLY web application designed 
 4. **Visual Representation**: The bar chart at the bottom dynamically represents the completion of goals.
 5. **Browse Your History**: Use the "Prev Month" and "Next Month" buttons to navigate through your goal history.
 6. **Update Data**: Click the "Update" button to save the current state of your goals.
+7. **Resed Data**: Click on the Reset Data button at the right top corner to reset data.
 
 ## Installation
 To set up the Daily Goal Tracker on your local machine:
@@ -33,6 +34,19 @@ To set up the Daily Goal Tracker on your local machine:
 - CSS
 - JavaScript
 
+
+
+
+## Additional Setup for Mac Users
+
+In some cases, Mac users might need to configure npm to manage global packages without requiring superuser privileges. This is particularly useful for running a local server like `http-server`.
+
+### Configure npm's Global Installation Path
+
+Set npm to use a directory in your home folder for global installations. Open a terminal and run the following command:
+
+```sh
+npm config set prefix "${HOME}/.npm-global"
 
 
 
