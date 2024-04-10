@@ -16,7 +16,7 @@ function loadFromLocalStorage() {
     if (storedNumGoal) numgoal = JSON.parse(storedNumGoal);
 }
 
-loadFromLocalStorage();  // Call this when the application starts
+loadFromLocalStorage();  
 
 
 //aa
@@ -230,7 +230,7 @@ document.getElementById('resetLocalStorageButton').addEventListener('click', fun
 
 
 
-loadFromLocalStorage();  // Call this when the application starts
+loadFromLocalStorage();  
 updateDateHeader();
 updateChart();
 displayGoals();
