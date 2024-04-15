@@ -1,6 +1,9 @@
 
 # Daily Goal Tracker
 
+[Visit the Daily Goal Tracker website](https://eypkllas.github.io/Daily-Goal-Tracker/)
+
+
 ## Introduction
 Daily Goal Tracker is an interactive and USER-FRIENDLY web application designed to help you keep track of your daily goals. Whether you're looking to improve productivity, manage time better, or simply track if you drink enough water everyday, Daily Goal Tracker offers a visual and intuitive way to monitor your progress.
 
