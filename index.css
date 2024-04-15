@@ -83,3 +83,14 @@ body, html {
 #resetLocalStorageButton:hover {
     background-color: rgb(83, 1, 1);  /*  hhover color  */
 }
+
+#updateButton {
+    font-size: 20px; 
+    padding: 2px 20px; 
+    background-color: rgb(63, 189, 63); 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+
+}
+
