@@ -1,7 +1,7 @@
 
 # Daily Goal Tracker
 
-[Visit the Daily Goal Tracker website](https://eypkllas.github.io/Daily-Goal-Tracker/)
+
 
 
 ## Introduction
